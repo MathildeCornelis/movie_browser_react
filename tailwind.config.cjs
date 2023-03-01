@@ -11,7 +11,8 @@ module.exports = {
       'background': '#15141F',
       'pink': '#9b368f',
       'orange_light': '#FF8F71',
-      'orange_dark': '#EF2D1A'
+      'orange_dark': '#EF2D1A',
+      'gray_light': '#BCBCBC'
     },
     extend: {
       fontFamily :{
