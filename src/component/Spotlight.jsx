@@ -24,7 +24,7 @@ const Spotlight = () => {
 
     return (
         <section className='w-full flex flex-col items-center'>
-            {spotlightMovie.slice(0, 1).map((movie) => (
+            {spotlightMovie.slice(1, 2).map((movie) => (
                 <div>
                     <div className='w-11/12 rounded-xl relative'>
                         <div key={movie.id} className='w-80 h-52 mr-2 ml-2 flex rounded-2xl overflow-hidden'>
@@ -37,9 +37,9 @@ const Spotlight = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col font-lato text-gray_light ml-24 absolute top-[14.6rem]'>
-                        <p className='text-sm'>Movie Spotlight</p>
-                        <p className='text-white text-l'>{movie.title}</p>
+                    <div className='w-1/2 flex flex-col font-lato text-gray_light ml-24 absolute top-[14.2rem]'>
+                        <p className='text-sm w-2/3'>Movie Spotlight</p>
+                        <p className='text-white text-l w-2/3'>{movie.title}</p>
                     </div>
                 </div>
             ))}
