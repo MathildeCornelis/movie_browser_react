@@ -25,13 +25,13 @@ const Trending = () => {
         <section className='w-full flex flex-col items-center pl-5 pt-7 pb-7 pr-5 text-xl'>
             <h2 className='font-lato text-white pr-[17rem]'>Trending</h2>
             <div ref={emblaRef} className='w-full flex flex-row justify-center h-80 mt-5 overflow-hidden'>
-                    <div className='flex flex-row'>
+                <div className='flex flex-row'>
                     {trendingMovie.map((movie) => (
                             <div className='w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
                                 <img key={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='w-52'/>
                             </div>
                     ))}
-                    </div>
+                </div>
             </div>
 
         </section>
