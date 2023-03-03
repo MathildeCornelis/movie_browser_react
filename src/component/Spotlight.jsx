@@ -39,7 +39,7 @@ const Spotlight = () => {
                     </div>
                     <div className='w-1/2 flex flex-col font-lato text-gray_light ml-24 absolute top-[14.2rem]'>
                         <p className='text-sm w-2/3'>Movie Spotlight</p>
-                        <p className='text-white text-l w-2/3'>{movie.title}</p>
+                        <p className='text-white text-l w-2/3 leading-none'>{movie.title}</p>
                     </div>
                 </div>
             ))}
