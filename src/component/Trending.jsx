@@ -3,6 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const Trending = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()], [Autoplay()]); 
@@ -26,8 +27,9 @@ const Trending = () => {
             <h2 className='font-lato text-white pr-[17rem]'>Trending</h2>
             <div ref={emblaRef} className='w-full flex flex-row justify-center h-80 mt-5 overflow-hidden'>
                 <div className='flex flex-row'>
-                    {trendingMovie.map((movie) => (
-                            <div className='justify-center w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
+                    {trendingMovie.map((movie, index) => (
+                        <NavLink to={`/movie_trending/${movie.id}`}>
+                            <div key={index} className='justify-center w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
                                 <img key={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='w-52'/>
                                 <div className='w-24 absolute rounded-xl p-2 m-3 ml-24 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
                                     <p className='font-lato text-white text-xs'>IMBd</p>
@@ -40,6 +42,8 @@ const Trending = () => {
                                     <p className='flex justify-center w-11/12 font-lato text-white text-lg'>{movie.title}</p>
                                 </div>
                             </div>
+                            {/* <p>{movie.id}</p> */}
+                        </NavLink>
                     ))}
                 </div>
             </div>

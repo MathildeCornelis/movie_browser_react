@@ -5,13 +5,13 @@ import { NavLink } from 'react-router-dom';
 const Spotlight = () => {
     const [spotlightMovie, setSpotlightMovie] = useState([]);
 
-    function randomNumber() {
-        let min = 1;
-        let max = 20;
-        let random = Math.round(Math.random() * (max - min + 1) + min);
-        return random;
-    }
-    console.log(randomNumber());
+    // function randomNumber() {
+    //     let min = 1;
+    //     let max = 20;
+    //     let random = Math.round(Math.random() * (max - min + 1) + min);
+    //     return random;
+    // }
+    // console.log(randomNumber());
     
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1')
