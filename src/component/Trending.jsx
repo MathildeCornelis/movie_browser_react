@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
 const Trending = () => {
-    const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()], [Autoplay()]); 
+    const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
     // const [data, setData] = useState([]);
     const [trendingMovie, setTrendingMovie] = useState([]);
 
@@ -35,7 +34,7 @@ const Trending = () => {
                                     <p className='font-lato text-white text-xs'>IMBd</p>
                                     <div className='w-full flex flex-row overflow-hidden items-center'>
                                         <img src="src/assets/star.svg" alt="" className='w-1/3 h-5'/>
-                                        <p className='w-2/3 font-lato text-white text-2xl pl-2'>{movie.vote_average}</p>
+                                        <p className='w-2/3 font-lato text-white text-2xl pl-2'>{Math.round(movie.vote_average)}</p>
                                     </div>
                                 </div>
                                 <div className='flex justify-center items-center w-48 h-20 mt-56 absolute rounded-xl bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
