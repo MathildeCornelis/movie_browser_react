@@ -24,7 +24,7 @@ const Trending_show_img = () => {
     }, [params.id]);
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1`)
+        axios.get(`https://api.themoviedb.  org/3/movie/${params.id}/recommendations?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1`)
         .then(response => {
             // console.log(response.data.results)
             setRecommendation(response.data.results);

@@ -4,14 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const Spotlight = () => {
     const [spotlightMovie, setSpotlightMovie] = useState([]);
-
-    // function randomNumber() {
-    //     let min = 1;
-    //     let max = 20;
-    //     let random = Math.round(Math.random() * (max - min + 1) + min);
-    //     return random;
-    // }
-    // console.log(randomNumber());
     
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1')
@@ -23,10 +15,16 @@ const Spotlight = () => {
         });
     }, [])
 
+    const random = Math.round(Math.random() * 20);
+    const randomPlusOne = random + 1;
+
+    // console.log(random);
+    // console.log(randomPlusOne);
+
     return (
         <section className='w-full flex flex-col items-center'>
-            {spotlightMovie.slice(1, 2).map((movie) => (
-                <NavLink to='/movie_spotlight'>
+            {spotlightMovie.slice(random, randomPlusOne).map((movie) => (
+                <NavLink to={`/movie_spotlight/${movie.id}`}>
                     <div>
                         <div className='w-11/12 rounded-xl relative'>
                             <div key={movie.id} className='w-80 h-52 mr-2 ml-2 flex rounded-2xl overflow-hidden'>

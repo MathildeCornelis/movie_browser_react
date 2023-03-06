@@ -1,9 +1,10 @@
 import React from 'react';
+import Spotlight_show from '../component/Spotlight_show'
 
 const Movie_spotlight = () => {
     return (
         <div>
-            hello
+            <Spotlight_show />
         </div>
     );
 };
