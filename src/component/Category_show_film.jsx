@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const Category_show_film = ({ genreId, displayFilm }) => {
     const [genres, setGenres] = useState([]);
@@ -37,19 +38,22 @@ const Category_show_film = ({ genreId, displayFilm }) => {
     return (
         <section className='flex flex-row flex-wrap justify-around m-4'>
         {genres.map((genre, index) => (
-            <div key={index} className='w-5/12 h-auto ml-2 mr-2 mb-4'>
-            <div className='h-44 overflow-hidden rounded-xl flex items-center'>
-                <img
-                src={`https://image.tmdb.org/t/p/w500${genre.poster_path}`}
-                alt={genre.original_title}
-                className='w-full h-60'
-                />
-            </div>
-            <p className='font-lato text-sm text-white mt-3 leading-tight'>
-                {genre.original_title}
-                <span className='text-gray_light'>({genre.release_date})</span>
-            </p>
-            </div>
+            <NavLink to={`/movie_category/${genre.id}`} className="">
+                <div key={index} className=''>
+                    <div className=''>
+                        <img
+                        src={`https://image.tmdb.org/t/p/w500${genre.poster_path}`}
+                        alt={genre.original_title}
+                        className=''
+                        />
+                    </div>
+                    <p className='font-lato text-sm text-white mt-3 leading-tight'>
+                        {genre.original_title}
+                        <span className='text-gray_light'>({genre.release_date})</span>
+                    </p>
+                </div>
+            </NavLink>
+            
         ))}
         </section>
     );
