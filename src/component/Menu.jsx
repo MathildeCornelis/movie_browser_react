@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const menu = () => {
     return (
-        <section className='w-full h-20 flex items-center'>
+        <section className='w-full h-20 flex items-cente fixed bottom-0 right-0 bg-background'>
             <div className='w-full flex flex-row items-center justify-around'>
                 <NavLink to='/'>
                     <img src="src/assets/home_orange.png" alt="" className='w-8 h-9'/>
