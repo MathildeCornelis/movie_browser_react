@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
+import Category_show_film from './category_show_film';
 
 const Category = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
     const [category, setCategory] = useState([]);
-
+    const [selectedGenreId, setSelectedGenreId] = useState(null);
+    console.log(selectedGenreId);
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US')
         .then(response => {
@@ -17,8 +19,10 @@ const Category = () => {
         });
     }, []);
 
-    const handleClick = event =>{
-        console.log(event.currentTarget.id);
+    const handleClick = (event) =>{
+        const genreId = event.currentTarget.id;
+        setSelectedGenreId(genreId);
+        console.log(genreId);
     }
 
     return (
@@ -30,6 +34,7 @@ const Category = () => {
                     ))}
                 </ul>
             </div>
+            <Category_show_film genreId={selectedGenreId} />
         </section>
     );
 };
