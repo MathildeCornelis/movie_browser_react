@@ -17,12 +17,16 @@ const Category = () => {
         });
     }, []);
 
+    const handleClick = event =>{
+        console.log(event.currentTarget.id);
+    }
+
     return (
         <section className='font-lato text-white mt-5 overflow-hidden'>
             <div ref={emblaRef} className='overflow-hidden'>
                 <ul className='flex text-l'>
                     {category.map((genre, index) => (
-                        <li key={index} className='ml-2 mr-2'><button>{genre.name}</button></li>
+                        <li key={index} className='ml-2 mr-2'><button id={genre.id} onClick={handleClick}>{genre.name}</button></li>
                     ))}
                 </ul>
             </div>

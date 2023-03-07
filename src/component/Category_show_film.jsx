@@ -6,7 +6,7 @@ const category_show_film = () => {
     const [genres, setGenres] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28&with_watch_monetization_types=flatrate`)
+        axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=12&with_watch_monetization_types=flatrate`)
         .then(response => {
             setGenres(response.data.results);
             
