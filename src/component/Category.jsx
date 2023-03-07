@@ -1,11 +1,31 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
+import axios from 'axios';
 
 const Category = () => {
+    const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
+    const [category, setCategory] = useState([]);
+
+    useEffect(() => {
+        axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US')
+        .then(response => {
+            setCategory(response.data.genres);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }, []);
+
     return (
-        <section className='font-lato text-white w-ful ml-5 mt-5 overflow-x-scroll'>
-            <ul className='flex flex-row text-l'>
-                <p className=''>Fantasy Horror Science Fiction Documentary petitchat oignonFantasy Horror Science Fiction Documentary petitchat oignon</p>
-            </ul>
+        <section className='font-lato text-white mt-5 overflow-hidden'>
+            <div ref={emblaRef} className='overflow-hidden'>
+                <ul className='flex text-l'>
+                    {category.map((genre, index) => (
+                        <li key={index} className='ml-2 mr-2'><button>{genre.name}</button></li>
+                    ))}
+                </ul>
+            </div>
         </section>
     );
 };

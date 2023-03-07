@@ -41,7 +41,6 @@ const Trending = () => {
                                     <p className='flex justify-center w-11/12 font-lato text-white text-lg'>{movie.title}</p>
                                 </div>
                             </div>
-                            {/* <p>{movie.id}</p> */}
                         </NavLink>
                     ))}
                 </div>
