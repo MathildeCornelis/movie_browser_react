@@ -38,13 +38,13 @@ const Category_show_film = ({ genreId, displayFilm }) => {
     return (
         <section className='flex flex-row flex-wrap justify-around m-4'>
         {genres.map((genre, index) => (
-            <NavLink to={`/movie_category/${genre.id}`} className="">
-                <div key={index} className=''>
-                    <div className=''>
+            <NavLink to={`/movie_category/${genre.id}`} className="w-5/12 flex justify-center">
+                <div key={index} className='w-full h-auto ml-2 mr-2 mb-4'>
+                    <div className='w-full h-44 overflow-hidden rounded-xl flex items-center'>
                         <img
                         src={`https://image.tmdb.org/t/p/w500${genre.poster_path}`}
                         alt={genre.original_title}
-                        className=''
+                        className='w-full h-60'
                         />
                     </div>
                     <p className='font-lato text-sm text-white mt-3 leading-tight'>
