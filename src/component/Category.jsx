@@ -44,7 +44,7 @@ const Category = () => {
                 <div ref={emblaRef} className='overflow-hidden'>
                     <ul className='flex text-l'>
                         {category.map((genre, index) => (
-                            <li key={index} className='ml-2 mr-2'><button id={genre.id} onClick={handleClick}>{genre.name}</button></li>
+                            <li key={index} className='ml-2 mr-2 min-w-fit xl:text-xl hover:font-bold hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-t hover:from-orange_dark hover:to-orange_light'><button id={genre.id} onClick={handleClick}>{genre.name}</button></li>
                         ))}
                     </ul>
                 </div>
