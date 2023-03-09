@@ -6,14 +6,12 @@ import { NavLink } from 'react-router-dom';
 
 const Trending = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
-    // const [data, setData] = useState([]);
     const [trendingMovie, setTrendingMovie] = useState([]);
 
 
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=0db63e7d578b1b7d392405ee14682954')
         .then(response => {
-            // setData(response.data);
             setTrendingMovie(response.data.results);
         })
         .catch(error => {
@@ -22,15 +20,15 @@ const Trending = () => {
     }, []);
 
     return (
-        <section className='w-full flex flex-col items-center pl-5 pt-7 pb-7 pr-5 text-xl'>
-            <h2 className='font-lato text-white pr-[17rem]'>Trending</h2>
-            <div ref={emblaRef} className='w-full flex flex-row justify-center h-80 mt-5 overflow-hidden'>
+        <section className='w-full flex flex-col items-center xl:items-start pl-5 pt-7 pb-7 pr-5 text-xl xl:mt-10'>
+            <h2 className='font-lato text-white pr-[17rem] xl:text-4xl xl:pl-10'>Trending</h2>
+            <div ref={emblaRef} className='w-full flex flex-row justify-center h-80 xl:h-96 mt-5 overflow-hidden xl:mt-10'>
                 <div className='flex flex-row'>
                     {trendingMovie.map((movie, index) => (
                         <NavLink to={`/movie_trending/${movie.id}`}>
                             <div key={index} className='justify-center w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
                                 <img key={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='w-52'/>
-                                <div className='w-24 absolute rounded-xl p-2 m-3 ml-24 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
+                                <div className='w-16 absolute rounded-xl p-2 m-3 ml-32 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
                                     <p className='font-lato text-white text-xs'>IMBd</p>
                                     <div className='w-full flex flex-row overflow-hidden items-center'>
                                         <img src="src/assets/star.svg" alt="" className='w-1/3 h-5'/>
