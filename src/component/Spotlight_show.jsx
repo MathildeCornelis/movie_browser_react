@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import { format } from 'date-fns';
+import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import clock from '../../public/assets/clock.svg';
@@ -57,7 +57,7 @@ const Spotlight_show = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{format(new Date(data.release_date), 'MMMM d, yyyy')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>
@@ -99,7 +99,7 @@ const Spotlight_show = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{format(new Date(data.release_date), 'MMMM d, yyyy')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>

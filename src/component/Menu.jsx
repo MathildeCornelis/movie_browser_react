@@ -19,7 +19,7 @@ const menu = () => {
     const grandiant2_account = location.pathname !== '/account' ? 'rgba(255, 255, 255, 0.25)' : '#FA7556';
 
     return (
-        <section className='w-full h-20 flex items-cente fixed bottom-0 right-0 bg-background xl:w-full'>
+        <section className='xl:hidden w-full h-20 flex items-cente fixed bottom-0 right-0 bg-background xl:w-full'>
             <div className='w-full flex flex-row items-center justify-around'>
                 <NavLink to='/'>
                     <HomeIcon_svg className="w-8 h-9" grandient1={grandiant1_home} grandient2={grandiant2_home}/>

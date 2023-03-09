@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import { format } from 'date-fns';
+import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import clock from '../../public/assets/clock.svg';
@@ -38,7 +38,7 @@ const Trending_show_img = () => {
         return (
             <section className='w-full'>
                 <div className='w-full'>
-                    <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" className='' />
+                    <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt={data.original_title}/>
                 </div>
                 <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
                     <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
@@ -57,7 +57,7 @@ const Trending_show_img = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{format(new Date(data.release_date), 'MMMM d, yyyy')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>
@@ -80,7 +80,7 @@ const Trending_show_img = () => {
     return (
             <section className='w-full'>
                 <div className='w-full'>
-                    <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" className='' />
+                    <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt={data.original_title}/>
                 </div>
                 <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
                     <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
@@ -99,7 +99,7 @@ const Trending_show_img = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{format(new Date(data.release_date), 'MMMM d, yyyy')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>
