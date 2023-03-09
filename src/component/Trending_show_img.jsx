@@ -35,32 +35,33 @@ const Trending_show_img = () => {
     }, [params.id]);
 
     if (!recommendation) {
-        return (<div className='w-full'>
+        return (
+            <section className='w-full'>
                 <div className='w-full'>
                     <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" className='' />
                 </div>
-                <div className='w-full font-lato text-white pl-5 pt-5 pr-5'>
-                    <p className='w-full text-2xl'>{data.original_title}</p>
-                    <div className='w-3/4 flex flex-row pt-2 mb-5 text-gray_light'>
+                <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
+                    <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
+                    <div className='w-3/4 flex flex-row pt-2 mb-5 text-gray_light xl:mt-10 xl:mb-10'>
                         <div className='w-1/2 flex flex-row'>
-                            <img src={clock} alt="" className='w-3'/>
-                            <p className='pl-2 text-sm'>{data.runtime} minutes</p>
+                            <img src={clock} alt={data.original_title} className='w-3 xl:w-6'/>
+                            <p className='pl-2 text-sm xl:text-lg'>{data.runtime} minutes</p>
                         </div>
                         <div className='w-1/2 flex flex-row'>
-                            <img src={star} alt="" className='w-3'/>
-                            <p className='pl-2 text-sm'>{data.vote_average} (IMDb)</p>
+                            <img src={star} alt="" className='w-3 xl:w-6'/>
+                            <p className='pl-2 text-sm xl:text-lg'>{data.vote_average} (IMDb)</p>
                         </div>
                     </div>
                     <div className='bg-white w-full h-[0.05rem] bg-opacity-50'>
                     </div>
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
-                            <p className='text-l'>Release date</p>
-                            <p className='text-xs mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-lg xl:text-2xl'>Release date</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
                         </div>
                         <div className='w-1/2'>
-                            <p className='text-l'>Genre</p>
-                            <div className='text-xs mt-2 text-gray_light'>
+                            <p className='text-lg xl:text-2xl'>Genre</p>
+                            <div className='text-xs xl:text-sm mt-2 text-gray_light'>
                                 Action
                             </div>
                         </div>
@@ -68,41 +69,41 @@ const Trending_show_img = () => {
                     <div className='bg-white w-full h-[0.05rem] bg-opacity-50'>
                     </div>
                     <div className='w-full mt-5 pb-5'>
-                        <p className='text-l mb-1'>Synopsis</p>
-                        <p className='text-sm text-gray_light'>{data.overview}</p>
+                        <p className='text-lg xl:text-2xl mb-1'>Synopsis</p>
+                        <p className='text-sm xl:text-base text-gray_light'>{data.overview}</p>
                     </div>
                 </div>
-            </div>
+            </section>
         )
     }
 
     return (
-            <div className='w-full'>
+            <section className='w-full'>
                 <div className='w-full'>
                     <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt="" className='' />
                 </div>
-                <div className='w-full font-lato text-white pl-5 pt-5 pr-5'>
-                    <p className='w-full text-2xl'>{data.original_title}</p>
-                    <div className='w-3/4 flex flex-row pt-2 mb-5 text-gray_light'>
+                <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
+                    <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
+                    <div className='w-3/4 flex flex-row pt-2 mb-5 text-gray_light xl:mt-10 xl:mb-10'>
                         <div className='w-1/2 flex flex-row'>
-                            <img src={clock} alt="" className='w-3'/>
-                            <p className='pl-2 text-sm'>{data.runtime} minutes</p>
+                            <img src={clock} alt={data.original_title} className='w-3 xl:w-6'/>
+                            <p className='pl-2 text-sm xl:text-lg'>{data.runtime} minutes</p>
                         </div>
                         <div className='w-1/2 flex flex-row'>
-                            <img src={star} alt="" className='w-3'/>
-                            <p className='pl-2 text-sm'>{data.vote_average} (IMDb)</p>
+                            <img src={star} alt="" className='w-3 xl:w-6'/>
+                            <p className='pl-2 text-sm xl:text-lg'>{data.vote_average} (IMDb)</p>
                         </div>
                     </div>
                     <div className='bg-white w-full h-[0.05rem] bg-opacity-50'>
                     </div>
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
-                            <p className='text-l'>Release date</p>
-                            <p className='text-xs mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-lg xl:text-2xl'>Release date</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
                         </div>
                         <div className='w-1/2'>
-                            <p className='text-l'>Genre</p>
-                            <div className='text-xs mt-2 text-gray_light'>
+                            <p className='text-lg xl:text-2xl'>Genre</p>
+                            <div className='text-xs xl:text-sm mt-2 text-gray_light'>
                                 Action
                             </div>
                         </div>
@@ -110,11 +111,11 @@ const Trending_show_img = () => {
                     <div className='bg-white w-full h-[0.05rem] bg-opacity-50'>
                     </div>
                     <div className='w-full mt-5 pb-5'>
-                        <p className='text-l mb-1'>Synopsis</p>
-                        <p className='text-sm text-gray_light'>{data.overview}</p>
+                        <p className='text-lg xl:text-2xl mb-1'>Synopsis</p>
+                        <p className='text-sm xl:text-base text-gray_light'>{data.overview}</p>
                     </div>
                     <div>
-                        <p className='text-l mb-1'>Related Movies</p>
+                        <p className='text-lg xl:text-2xl mb-1'>Related Movies</p>
                         <div ref={emblaRef} className='flex flex-row overflow-hidden'>
                             <div className='flex flex-row'>
                                 {recommendation && recommendation.map((recom) =>(
@@ -130,7 +131,7 @@ const Trending_show_img = () => {
                         
                     </div>
                 </div>
-            </div>
+            </section>
     );
 };
 
