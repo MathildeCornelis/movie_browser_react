@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
-import Category_show_film from './category_show_film';
+import Category_show_film from './Category_show_film';
 
 const Category = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
