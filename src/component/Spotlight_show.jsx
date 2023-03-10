@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import { format } from 'date-fns';
+import moment from 'moment';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import clock from '../../public/assets/clock.svg';
@@ -57,7 +57,7 @@ const Spotlight_show = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{moment(data.release_date).format('MMMM D, YYYY')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>
@@ -99,7 +99,7 @@ const Spotlight_show = () => {
                     <div className='w-full flex flex-row mt-5 pb-5'>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Release date</p>
-                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{data.release_date}</p>
+                            <p className='text-xs xl:text-sm mt-2 text-gray_light'>{moment(data.release_date).format('MMMM D, YYYY')}</p>
                         </div>
                         <div className='w-1/2'>
                             <p className='text-lg xl:text-2xl'>Genre</p>
@@ -123,7 +123,7 @@ const Spotlight_show = () => {
                                         <div className="w-36 h-auto">
                                             <img src={`https://image.tmdb.org/t/p/original${recom.backdrop_path}`} alt={recom.original_title} className='rounded-xl'/>
                                         </div>
-                                        <p className='font-lato text-sm pt-2'>{recom.original_title} <span className='text-gray_light text-xs'>({recom.release_date})</span></p>
+                                        <p className='font-lato text-sm pt-2'>{recom.original_title} <span className='text-gray_light text-xs'>({moment(recom.release_date).format('YYYY')})</span></p>
                                     </div>
                                 ))}
                             </div>
