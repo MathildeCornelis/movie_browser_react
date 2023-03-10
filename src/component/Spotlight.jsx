@@ -29,7 +29,7 @@ const Spotlight = () => {
                         </div>
                         <div className='w-7/12 xl:h-36 h-16 flex flex-row items-center pl-5 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 absolute inset-y-56 inset-x-12 rounded-2xl xl:top-[29rem] xl:left-[13rem]'>
                             <div className='w-10 xl:w-20 h-10 xl:h-20 flex items-center justify-center bg-gradient-to-r from-orange_dark to-orange_light rounded-3xl xl:rounded-full'>
-                                <div class="w-0 h-0 border-t-[8px] xl:border-t-[14px] border-t-transparent border-l-[14px] xl:border-l-[24.5px] border-l-white border-b-[8px] xl:border-b-[14px] border-b-transparent">
+                                <div className="w-0 h-0 border-t-[8px] xl:border-t-[14px] border-t-transparent border-l-[14px] xl:border-l-[24.5px] border-l-white border-b-[8px] xl:border-b-[14px] border-b-transparent">
                                 </div>
                             </div>
                         </div>
