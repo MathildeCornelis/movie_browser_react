@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import { format } from 'date-fns';
+// import { format } from 'date-fns';
+import moment from 'moment/moment';
 const Category_show_film = ({ genreId, displayFilm }) => {
     const [genres, setGenres] = useState([]);
     const [url, setUrl] = useState('');
@@ -50,7 +51,7 @@ const Category_show_film = ({ genreId, displayFilm }) => {
                     </div>
                     <p className='font-lato text-sm text-white mt-3 leading-tight xl:text-lg'>
                     {genre.original_title} 
-                    <span className='text-gray_light'> ({format(new Date(genre.release_date), 'yyyy')})</span>
+                    <span className='text-gray_light'> ({moment(genre.release_date).format('YYYY')})</span>
                     </p>
                 </div>
                 </NavLink>

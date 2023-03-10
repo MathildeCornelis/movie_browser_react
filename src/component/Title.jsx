@@ -30,8 +30,6 @@ const showMenu = () => {
                     Browser
                 </NavLink>
                 <img src={logo} alt="logo api"  className='w-14 xl:hidden'/>
-                {/* <div className='w-1/2 flex justify-end'>
-                </div> */}
                 <div onClick={showMenu} className='hidden xl:flex mr-10 w-14 h-8 cursor-pointer z-20 relative'>
                     <span style={{transform: `translateY(${translateY2}px) rotateZ(${rotateZ}deg)` }} className='xl:rounded-xl xl:absolute xl:w-full xl:h-1 xl:bg-white xl:transition xl:ease-in-out xl:delay-150'></span>
                     <span style={{opacity: opacity}} className='xl:rounded-xl xl:w-full xl:h-1 xl:bg-orange_light xl:ease-in-out xl:delay-150 xl:absolute xl:top-[45%]'></span>
@@ -39,7 +37,7 @@ const showMenu = () => {
                     
                 </div>
             </h1>
-            <div style={{display: displayValue}} className='flex-col justify-center items-center bg-input z-10  absolute w-96 right-0 top-0 h-full' >
+            <div style={{display: displayValue}} className='flex-col justify-center items-center bg-input z-10 absolute w-[35%] right-0 top-0 h-full' >
                         <NavLink to="/" className='mt-5 hover:text-orange_dark'>
                             Home
                         </NavLink>
