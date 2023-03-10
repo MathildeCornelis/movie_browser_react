@@ -20,8 +20,8 @@ const Spotlight = () => {
 
     return (
         <section className='w-full flex flex-col items-center'>
-            {spotlightMovie.slice(random, randomPlusOne).map((movie) => (
-                <NavLink to={`/movie_spotlight/${movie.id}`} className='xl:w-3/4 '>
+            {spotlightMovie.slice(random, randomPlusOne).map((movie, index) => (
+                <NavLink key={index} to={`/movie_spotlight/${movie.id}`} className='xl:w-3/4 '>
                         <div className='w-11/12 rounded-xl relative xl:w-full '>
                             <div key={movie.id} className='w-80 xl:w-full h-52 mr-2 ml-2 flex rounded-2xl overflow-hidden xl:h-[30rem]'>
                                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='flex items-start rounded-3xl h-min xl:w-full xl:items-center'/>

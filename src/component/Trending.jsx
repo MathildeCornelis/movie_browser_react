@@ -25,14 +25,14 @@ const Trending = () => {
             <div ref={emblaRef} className='w-full flex flex-row justify-center h-80 xl:h-96 mt-5 overflow-hidden xl:mt-10'>
                 <div className='flex flex-row'>
                     {trendingMovie.map((movie, index) => (
-                        <NavLink to={`/movie_trending/${movie.id}`}>
-                            <div key={index} className='justify-center w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
-                                <img key={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='w-52'/>
-                                <div className='w-16 absolute rounded-xl p-2 m-3 ml-32 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
+                        <NavLink key={index} to={`/movie_trending/${movie.id}`}>
+                            <div className='justify-center w-52 mr-2 ml-2 flex rounded-2xl bg-orange_light overflow-hidden'>
+                                <img key={index} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='w-52'/>
+                                <div className='w-20 absolute rounded-xl p-2 m-3 ml-32 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
                                     <p className='font-lato text-white text-xs'>IMBd</p>
                                     <div className='w-full flex flex-row overflow-hidden items-center'>
                                         <img src="src/assets/star.svg" alt="" className='w-1/3 h-5'/>
-                                        <p className='w-2/3 font-lato text-white text-2xl pl-2'>{Math.round(movie.vote_average)}</p>
+                                        <p className='w-2/3 font-lato text-white text-2xl pl-2'>{movie.vote_average.toFixed(1)}</p>
                                     </div>
                                 </div>
                                 <div className='flex justify-center items-center w-48 h-20 mt-56 absolute rounded-xl bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
