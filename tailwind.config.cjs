@@ -8,6 +8,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       'white': '#ffffff',
+      'black': '#000000',
       'input': '#211F30',
       'background': '#15141F',
       'pink': '#9b368f',

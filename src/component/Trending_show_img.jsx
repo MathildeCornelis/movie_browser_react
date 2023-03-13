@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-// import { format } from 'date-fns';
+import { useParams, NavLink } from 'react-router-dom';
 import moment from 'moment';
 import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import clock from '../../public/assets/clock.svg';
 import star from '../../public/assets/gray_star.svg';
+import arrowreturn from '../../public/assets/return.svg';
 
 const Trending_show_img = () => {
     const params = useParams();
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({
+        backdrop_path: "",
+        original_title: "",
+        runtime: "",
+        vote_average: "",
+        release_date: "",
+        overview: ""
+    });
     const [recommendation, setRecommendation] = useState([]);
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
 
@@ -35,11 +42,15 @@ const Trending_show_img = () => {
         });
     }, [params.id]);
 
-    if (!recommendation) {
+    if (!recommendation.length) {
+        
         return (
             <section className='w-full'>
                 <div className='w-full'>
                     <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt={data.original_title}/>
+                    <NavLink to='/'>
+                        <img src={arrowreturn} alt="white arrow to return to the home page" className='absolute left-4 top-5 xl:w-[2%] xl:top-7 xl:left-7'/>
+                    </NavLink>                
                 </div>
                 <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
                     <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
@@ -79,9 +90,12 @@ const Trending_show_img = () => {
     }
 
     return (
-            <section className='w-full'>
+            <section className='w-full h-full'>
                 <div className='w-full'>
                     <img src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`} alt={data.original_title}/>
+                    <NavLink to='/'>
+                        <img src={arrowreturn} alt="white arrow to return to the home page" className='absolute left-4 top-5 xl:w-[2%] xl:top-7 xl:left-7'/>
+                    </NavLink>
                 </div>
                 <div className='w-full font-lato text-white pl-5 pt-5 pr-5 xl:pl-10 xl:pt-10 xl:pr-10'>
                     <h1 className='w-full text-2xl xl:text-5xl'>{data.original_title}</h1>
