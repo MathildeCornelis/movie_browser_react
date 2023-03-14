@@ -10,6 +10,7 @@ module.exports = {
       'white': '#ffffff',
       'black': '#000000',
       'input': '#211F30',
+      "login": '#37363f',
       'background': '#15141F',
       'pink': '#9b368f',
       'orange_light': '#FF8F71',
