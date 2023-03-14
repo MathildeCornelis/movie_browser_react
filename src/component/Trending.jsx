@@ -3,7 +3,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-
+import star from '../../public/assets/star.svg';
 const Trending = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
     const [trendingMovie, setTrendingMovie] = useState([]);
@@ -31,7 +31,7 @@ const Trending = () => {
                                 <div className='w-20 absolute rounded-xl p-2 m-3 ml-32 bg-gray_light bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray_light border-opacity-50 overflow-hidden'>
                                     <p className='font-lato text-white text-xs'>IMBd</p>
                                     <div className='w-full flex flex-row overflow-hidden items-center'>
-                                        <img src="src/assets/star.svg" alt="" className='w-1/3 h-5'/>
+                                        <img src={star} alt="yellow star" className='w-1/3 h-5'/>
                                         <p className='w-2/3 font-lato text-white text-2xl pl-2'>{movie.vote_average.toFixed(1)}</p>
                                     </div>
                                 </div>
