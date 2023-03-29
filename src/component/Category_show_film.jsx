@@ -9,7 +9,7 @@ const Category_show_film = ({ genreId, displayFilm }) => {
 
     useEffect(() => {
         if (genreId) { 
-            setUrl(`https://api.themoviedb.org/3/discover/movie?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}&with_watch_monetization_types=flatrate`);
+            setUrl(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}&with_watch_monetization_types=flatrate`);
         } else {
             setUrl(''); 
         }
@@ -17,7 +17,7 @@ const Category_show_film = ({ genreId, displayFilm }) => {
     
     useEffect(() => {
         if (displayFilm){
-            setUrl(`https://api.themoviedb.org/3/search/movie?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&query=${displayFilm}&page=1&include_adult=false`)
+            setUrl(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_KEY}&language=en-US&query=${displayFilm}&page=1&include_adult=false`)
         } else {
             setUrl('');
         }

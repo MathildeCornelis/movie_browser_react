@@ -4,13 +4,15 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import star from '../../public/assets/star.svg';
+
+
 const Trending = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
     const [trendingMovie, setTrendingMovie] = useState([]);
 
 
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/trending/movie/week?api_key=0db63e7d578b1b7d392405ee14682954')
+        axios.get(`https://api.themoviedb.org/3/trending/movie/week?api_key=${import.meta.env.VITE_KEY}`)
         .then(response => {
             setTrendingMovie(response.data.results);
         })

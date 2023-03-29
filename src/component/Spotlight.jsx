@@ -6,7 +6,7 @@ const Spotlight = () => {
     const [spotlightMovie, setSpotlightMovie] = useState([]);
     
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/movie/popular?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1')
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_KEY}&language=en-US&page=1`)
         .then(response => {
             setSpotlightMovie(response.data.results)
         })

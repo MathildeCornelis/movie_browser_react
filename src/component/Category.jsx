@@ -11,7 +11,7 @@ const Category = () => {
     const [searchFilm, setSearchFilm] = useState('');
     
     useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US')
+        axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${import.meta.env.VITE_KEY}&language=en-US`)
         .then(response => {
             setCategory(response.data.genres);
         })

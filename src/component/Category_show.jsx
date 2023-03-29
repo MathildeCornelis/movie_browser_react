@@ -22,7 +22,7 @@ const Category_show = () => {
     const [emblaRef] = useEmblaCarousel({ loop: false }, [WheelGesturesPlugin()]); 
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US`)
+        axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${import.meta.env.VITE_KEY}&language=en-US`)
         .then(response => {
             setData(response.data);
         })
@@ -32,7 +32,7 @@ const Category_show = () => {
     }, [params.id]);
 
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=0db63e7d578b1b7d392405ee14682954&language=en-US&page=1`)
+        axios.get(`https://api.themoviedb.org/3/movie/${params.id}/recommendations?api_key=${import.meta.env.VITE_KEY}&language=en-US&page=1`)
         .then(response => {
             // console.log(response.data.results)
             setRecommendation(response.data.results);
