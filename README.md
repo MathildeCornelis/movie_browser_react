@@ -1,6 +1,6 @@
 # movie_browser_react
 
-![](./assets/README.png)
+![](./public/assets/README.png)
 
 ---
 
